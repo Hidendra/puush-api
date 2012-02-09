@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('puush')) exit('Bonjour');
+
 // The folder where uploads are stored in
 define ('UPLOAD_DIR', '/var/www/uploads/');
 
