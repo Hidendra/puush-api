@@ -1,0 +1,10 @@
+Lighttpd
+img\.griefcraft\.com would of course become whatever your image domain is
+
+$HTTP["host"] =~ "^(img\.griefcraft\.com|puush\.me)$" {
+        server.document-root = "/var/www/servers/img.griefcraft.com/"
+        url.rewrite-once = (
+                "^/api/up" => "/upload.php",
+                "^/([a-zA-Z0-9]+)$" => "/view.php?image=$1"
+        )
+}

@@ -1,0 +1,10 @@
+puush version       r83
+puush server        216.155.137.235
+
+UPLOADING
+POST        ->  http://puush.me/api/up
+                "k" = ?
+                "c" = ?
+                "z" = "poop" -- junk
+                "f" = image
+            <-  0,http://puu.sh/IMGID,??,??
