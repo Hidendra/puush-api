@@ -25,7 +25,7 @@ function random_filename()
     $random_string = md5(uniqid(rand(), true));
 
     // chop it down to random length
-    return substr($random_string, 0, rand(2, 4));
+    return substr($random_string, 0, rand(4, 8));
 }
 
 /**
