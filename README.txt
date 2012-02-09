@@ -13,6 +13,6 @@ REQUIREMENTS
 USAGE
 
 - Using the hosts file (or your DNS server if you have one?), route PUUSH.ME to the server you setup this script on.
-- On the server that will accept these requests, make sure they have a vhost setup to accept requests at PUUSH.ME and also another location so that you can actually view them.
+- On the server that will accept these requests, make sure they have a vhost setup to accept requests at PUUSH.ME and also another location so that you (and anyone else) can actually view them.
 
 If you've already changed the domain in config.php, you are good to go. Use puush as normal to upload files and it will work as if it's uploaded to puush.me; it will still happily put the full (and correct) URL into your clipboard.
