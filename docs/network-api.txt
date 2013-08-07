@@ -3,8 +3,11 @@ puush server        216.155.137.235
 
 UPLOADING
 POST        ->  http://puush.me/api/up
-                "k" = ?
-                "c" = ?
+                "k" = API key, 32 characters long like MD5, all uppercase
+                "c" = MD5 hash of the image, lowercase
                 "z" = "poop" -- junk
                 "f" = image
             <-  0,http://puu.sh/IMGID,??,??
+
+therefore, a file can be uploaded to puush.me or this puush-api and the url extracted with curl and cut like so ($1 is path to file):
+curl -s -X POST -H 'Content-Type: multipart/form-data' -F "k=$puush_api_key" -F "c=$(md5sum "$1" | cut -d' ' -f1)" -F "z=poop" -F "f=@${1};filename=ss ($(date '+%Y-%m-%d at %I.%M.%S')).png;type=application/octet-stream" http://puush.me/api/up | cut -d, -f2
