@@ -4,10 +4,10 @@ define('puush', '');
 require_once 'config.php';
 require_once 'func.php';
 
-// ?
+// API key
 $k = get_post_var('k');
 
-// ?
+// MD5 hash of file
 $c = get_post_var('c');
 
 // Check for the file
@@ -26,6 +26,7 @@ if ($file['size'] > MAX_FILE_SIZE)
 }
 
 // Ensure the image is actually a file and not a friendly virus
+// todo: validate MD5 hash either in this function or here
 if (validate_image($file) === FALSE)
 {
     exit ('ERR Invalid image.');
